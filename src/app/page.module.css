@@ -1,6 +1,21 @@
-.main {
-  width: 95%;
-  margin: auto;
+.main { 
+  display: flex;
+}
+
+.sidebarContainer {
+  width: 20%;
+}
+
+.contentContainer {
+  flex: 1;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.header {
+  display: inline-block;
+  width: 100%;
 }
 
 /* .page {

@@ -11,7 +11,7 @@ export default function Header() {
         transition={{type:'spring',damping:18,mass:0.75}}
         initail={{opacity:0,x:-1000}} animate={{opacticy:1,x:0}}
         >
-            <h1 style={bookTitleStyle}>Book Management and Digitalization</h1>
+            <h1 style={bookTitleStyle}>Book App</h1>
             <motion.input type="text" placeholder="Search for book, author..."
             style={searchInputStyle}
             initial={{opacity:0,x:-100}}
