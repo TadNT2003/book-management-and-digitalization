@@ -1,4 +1,12 @@
-:root {
+body {
+  background-color: #f2dfce;
+}
+
+h1 h2 h3 h4 p span li a {
+  
+}
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -39,4 +47,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
