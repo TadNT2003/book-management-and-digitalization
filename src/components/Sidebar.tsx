@@ -51,33 +51,6 @@ export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
 }
 
 export default function Sidebar() {
-    // const SibebarList = [
-    //     {
-    //         title: "Home",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    //     {
-    //         title: "Book management",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    //     {
-    //         title: "Digitalization",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    //     {
-    //         title: "Community",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    //     {
-    //         title: "Self-creation",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    //     {
-    //         title: "Profile",
-    //         icon: <i className='fa fa-home' style={iconStyle}></i>
-    //     },
-    // ]
-
   return (
         <aside style={sidebarStyle}>
             <nav style={navigatorStyle}>
@@ -109,8 +82,10 @@ export default function Sidebar() {
 
 
 const sidebarStyle = {
-    height: '100vh',
-}
+    height: '100%',
+    width: '20%',
+    position: 'fixed',
+} as const
 
 const navigatorStyle = {
     height: '100%',
