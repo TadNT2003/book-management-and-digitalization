@@ -18,8 +18,8 @@ export default function DigitalizationPage() {
             <DigitalizeBookForm isNew={isNew}></DigitalizeBookForm>
             <div className={styles.newAndEditButtonContainer}>
               <div>
-                <button onClick={() => setIsNew(true)}>Register new book</button>
-                <button onClick={() => setIsNew(false)}>Edit old book</button>
+                <button disabled={isNew} onClick={() => setIsNew(true)}>Register new book</button>
+                <button disabled={!isNew} onClick={() => setIsNew(false)}>Edit old book</button>
               </div>
             </div>
         </motion.div>

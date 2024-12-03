@@ -16,6 +16,6 @@
     transition: background .2s ease-in-out;
 }
 
-.newAndEditButtonContainer button:hover {
+.newAndEditButtonContainer button:hover:enabled {
     background: rgb(197, 131, 57);
 }

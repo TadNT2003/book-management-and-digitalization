@@ -5,8 +5,11 @@ type DigitalizationFormInput = {
   isNew: boolean;
 }
 export default function digitalizeBookForm({isNew}: DigitalizationFormInput) {
+  const formTitle = isNew? "Upload new book": "Edit uploaded book"
+  
   return (
     <form className={styles.bookForm} action="">
+        <h1>{formTitle}</h1>
         <h3> Title</h3>
         <input className={styles.inputBookInfo} type="text" name="title" id="title" />
 
