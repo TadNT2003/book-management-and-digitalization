@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import '@fortawesome/fontawesome-free/css/all.min.css'
+// import '@fortawesome/fontawesome-free/css/all.min.css'
 import mock_logo from '@/assets/mock/mangadex-wordmark.svg'
 import { ChevronFirst } from 'lucide-react'
 import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
@@ -11,17 +11,17 @@ import {
     PenLine,
     UsersRound,
     BarChart3,
-    LayoutDashboard,
     Settings
  } from 'lucide-react'  
+import { useRouter } from 'next/navigation'
 
 type SidebarItemInput = {
     icon: React.JSX.Element,
     text: sidebarNavigationTitle,
     active: sidebarNavigationTitle,
-    alert?: string,
+    onClick: string,
 }
-export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
+export const SidebarItem = ({icon, text, active, onClick}: SidebarItemInput) => {
     const [isHover, setIsHover] = useState(false);
     const handleMouseEnter = () => {
         setIsHover(true)
@@ -29,6 +29,8 @@ export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
     const handleMouseLeave = () => {
         setIsHover(false);
     };
+    const route = useRouter()
+
     const navigatorItemStyle = {
         position: 'relative',
         display: 'flex',
@@ -43,7 +45,7 @@ export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
     } as const;
     
     return (
-        <li style={navigatorItemStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <li style={navigatorItemStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => route.push(onClick)}>
             {icon}
             <span style={navigatorTitleStyle}>{text}</span>
         </li>
@@ -54,6 +56,7 @@ type SidebarInput = {
     active: sidebarNavigationTitle
 }
 export default function Sidebar({active}: SidebarInput) {
+
   return (
         <aside style={sidebarStyle}>
             <nav style={navigatorStyle}>
@@ -65,14 +68,14 @@ export default function Sidebar({active}: SidebarInput) {
                 </div>
 
                 <ul style={navigatorListStyle}>
-                    <SidebarItem icon={<House size={20}/>} text={sidebarNavigationTitle.HOME} active={active}></SidebarItem>
-                    <SidebarItem icon={<BarChart3 size={20}/>} text={sidebarNavigationTitle.MANAGEMENT} active={active}></SidebarItem>
-                    <SidebarItem icon={<FileScan size={20}/>} text={sidebarNavigationTitle.DIGITALIZATION} active={active}></SidebarItem>
-                    <SidebarItem icon={<UsersRound size={20}/>} text={sidebarNavigationTitle.COMMUNITY} active={active}></SidebarItem>
-                    <SidebarItem icon={<PenLine size={20}/>} text={sidebarNavigationTitle.SELF_CREATION} active={active}></SidebarItem>
+                    <SidebarItem icon={<House size={20}/>} text={sidebarNavigationTitle.HOME} active={active} onClick={'/'}></SidebarItem>
+                    <SidebarItem icon={<BarChart3 size={20}/>} text={sidebarNavigationTitle.MANAGEMENT} active={active} onClick={'/management'}></SidebarItem>
+                    <SidebarItem icon={<FileScan size={20}/>} text={sidebarNavigationTitle.DIGITALIZATION} active={active} onClick={'/digitalization'}></SidebarItem>
+                    <SidebarItem icon={<UsersRound size={20}/>} text={sidebarNavigationTitle.COMMUNITY} active={active} onClick={'/community'}></SidebarItem>
+                    <SidebarItem icon={<PenLine size={20}/>} text={sidebarNavigationTitle.SELF_CREATION} active={active} onClick={'/self_creation'}></SidebarItem>
 
-                    <SidebarItem icon={<Settings size={20}/>} text={sidebarNavigationTitle.SETTINGS} active={active}></SidebarItem>
-                    <SidebarItem icon={<UserCircle size={20}/>} text={sidebarNavigationTitle.USER_PROFILE} active={active}></SidebarItem>
+                    <SidebarItem icon={<Settings size={20}/>} text={sidebarNavigationTitle.SETTINGS} active={active} onClick={'/settings'}></SidebarItem>
+                    <SidebarItem icon={<UserCircle size={20}/>} text={sidebarNavigationTitle.USER_PROFILE} active={active} onClick={'/profile'}></SidebarItem>
                 </ul>
 
                 <div style={SidebarFooterStyle}>
