@@ -3,22 +3,22 @@ import React, { useState } from 'react'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import mock_logo from '@/assets/mock/mangadex-wordmark.svg'
 import { ChevronFirst } from 'lucide-react'
+import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import { 
-    LifeBuoy,
-    Receipt,
-    Boxes,
-    Package,
+    House,
+    FileScan,
     UserCircle,
+    PenLine,
+    UsersRound,
     BarChart3,
     LayoutDashboard,
     Settings
- } from 'lucide-react'
-import { relative } from 'path'
+ } from 'lucide-react'  
 
 type SidebarItemInput = {
     icon: React.JSX.Element,
-    text: string,
-    active?: boolean,
+    text: sidebarNavigationTitle,
+    active: sidebarNavigationTitle,
     alert?: string,
 }
 export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
@@ -39,7 +39,7 @@ export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
         paddingRight: '0.75rem',
         fontWeight: '500',
         borderRadius: '0.375rem',
-        backgroundColor: isHover? 'rgb(99 102 241)': 'inherit'
+        backgroundColor: text===active? 'rgb(254 215 170)': isHover? 'rgb(238 242 255)': 'inherit'
     } as const;
     
     return (
@@ -50,7 +50,10 @@ export const SidebarItem = ({icon, text, active, alert}: SidebarItemInput) => {
     )
 }
 
-export default function Sidebar() {
+type SidebarInput = {
+    active: sidebarNavigationTitle
+}
+export default function Sidebar({active}: SidebarInput) {
   return (
         <aside style={sidebarStyle}>
             <nav style={navigatorStyle}>
@@ -62,14 +65,14 @@ export default function Sidebar() {
                 </div>
 
                 <ul style={navigatorListStyle}>
-                    <SidebarItem icon={<LayoutDashboard size={20}/>} text='Dashboard'></SidebarItem>
-                    <SidebarItem icon={<BarChart3 size={20}/>} text='Barchart'></SidebarItem>
-                    <SidebarItem icon={<UserCircle size={20}/>} text='Inventory'></SidebarItem>
-                    <SidebarItem icon={<Boxes size={20}/>} text='Orders'></SidebarItem>
-                    <SidebarItem icon={<Package size={20}/>} text='Billings'></SidebarItem>
+                    <SidebarItem icon={<House size={20}/>} text={sidebarNavigationTitle.HOME} active={active}></SidebarItem>
+                    <SidebarItem icon={<BarChart3 size={20}/>} text={sidebarNavigationTitle.MANAGEMENT} active={active}></SidebarItem>
+                    <SidebarItem icon={<FileScan size={20}/>} text={sidebarNavigationTitle.DIGITALIZATION} active={active}></SidebarItem>
+                    <SidebarItem icon={<UsersRound size={20}/>} text={sidebarNavigationTitle.COMMUNITY} active={active}></SidebarItem>
+                    <SidebarItem icon={<PenLine size={20}/>} text={sidebarNavigationTitle.SELF_CREATION} active={active}></SidebarItem>
 
-                    <SidebarItem icon={<LayoutDashboard size={20}/>} text='Dashboard'></SidebarItem>
-                    <SidebarItem icon={<LayoutDashboard size={20}/>} text='Dashboard'></SidebarItem>
+                    <SidebarItem icon={<Settings size={20}/>} text={sidebarNavigationTitle.SETTINGS} active={active}></SidebarItem>
+                    <SidebarItem icon={<UserCircle size={20}/>} text={sidebarNavigationTitle.USER_PROFILE} active={active}></SidebarItem>
                 </ul>
 
                 <div style={SidebarFooterStyle}>
