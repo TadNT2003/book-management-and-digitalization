@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import BookCard from "@/components/Bookcard";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import { books } from '@/constants/mockData';
 import { motion } from 'framer-motion';
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.sidebarContainer}>
-        <Sidebar/>
+        <Sidebar active={sidebarNavigationTitle.HOME}/>
       </div>
       <div className={styles.contentContainer}>
         <section className={styles.header}>
