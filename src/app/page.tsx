@@ -4,7 +4,7 @@ import BookCard from "@/components/Bookcard";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { books } from '@/constants/mockData';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function Home() {
   return (
