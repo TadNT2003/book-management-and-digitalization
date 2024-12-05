@@ -6,19 +6,26 @@ import Sidebar from "@/components/Sidebar";
 import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import { books } from '@/constants/mockData';
 import { motion } from 'motion/react';
+import PagewithSidabarHeader from "@/components/PagewithSidabarHeader";
 
 export default function Home() {
+  
   return (
-    <main className={styles.main}>
-      <div className={styles.sidebarContainer}>
-        <Sidebar active={sidebarNavigationTitle.HOME}/>
-      </div>
-      <div className={styles.contentContainer}>
-        <section className={styles.header}>
-          <Header/>
-        </section>
-        <div className={styles.mainContentContainer}>
-          <h1 className={styles.homePageTitle}>ALL BOOKS</h1>
+    // <main className={styles.main}>
+    //   <div className={styles.sidebarContainer}>
+    //     <Sidebar active={sidebarNavigationTitle.HOME}/>
+    //   </div>
+    //   <div className={styles.contentContainer}>
+    //     <section className={styles.header}>
+    //       <Header/>
+    //     </section>
+    //     <div className={styles.mainContentContainer}>
+          
+    //     </div>
+    //   </div>
+    // </main>
+    <PagewithSidabarHeader active={sidebarNavigationTitle.HOME}>
+      <h1 className={styles.homePageTitle}>ALL BOOKS </h1>
           <ul className={styles.bookList}>
             {
               books.map((book, i) => 
@@ -36,8 +43,6 @@ export default function Home() {
               )
             }
           </ul>
-        </div>
-      </div>
-    </main>
+    </PagewithSidabarHeader>
   );
 }

@@ -4,14 +4,18 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 import mock_img from '@/assets/mock/Doy_avatar.jpg'
 
-export default function Header() {
+type HeaderInput = {
+    expand?: boolean
+}
+
+export default function Header({expand} : HeaderInput) {
   return (
     <header style={headerStyle}>
         <motion.div style={leftContatinerStyle}
         transition={{type:'spring',damping:18,mass:0.75}}
         initial={{opacity:0,x:-1000}} animate={{opacity:1,x:0}}
         >
-            <h1 style={bookTitleStyle}>Book App</h1>
+            <h1 style={bookTitleStyle}>Book App </h1>
             <motion.input type="text" placeholder="Search for book, author..."
             style={searchInputStyle}
             initial={{opacity:0,x:-100}}
