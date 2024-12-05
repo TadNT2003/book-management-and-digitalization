@@ -10,6 +10,7 @@ export default function LeftHeaderContainer() {
     const login = session?.user
     // const login = false;
     if (login) {
+        console.log("Current user from header is:", login)
         return (
             <div>
             <Link href="/profile" style={avatarLinkStyle}>

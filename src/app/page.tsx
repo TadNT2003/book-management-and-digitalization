@@ -25,6 +25,8 @@ export default function Home() {
     //   </div>
     // </main>
     <PagewithSidabarHeader active={sidebarNavigationTitle.HOME}>
+      <div style={{padding: '10px 0'}}>
+
       <h1 className={styles.homePageTitle}>ALL BOOKS </h1>
           <ul className={styles.bookList}>
             {
@@ -43,6 +45,7 @@ export default function Home() {
               )
             }
           </ul>
+      </div>
     </PagewithSidabarHeader>
   );
 }

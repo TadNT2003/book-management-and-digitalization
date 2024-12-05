@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import React, { useRef, useState } from 'react'
 import Header from './Header'

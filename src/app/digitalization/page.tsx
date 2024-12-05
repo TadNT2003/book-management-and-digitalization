@@ -15,6 +15,7 @@ export default function DigitalizationPage() {
         transition={{type:'spring', damping:50,mass:0.75}}
         initial={{opacity:0,x:1000}}
         animate={{opacity:1,x:0}}>
+          <div style={{padding: '10px 0'}}>
             <DigitalizeBookForm isNew={isNew}></DigitalizeBookForm>
             <div className={styles.newAndEditButtonContainer}>
               <div>
@@ -22,6 +23,7 @@ export default function DigitalizationPage() {
                 <button disabled={!isNew} onClick={() => setIsNew(false)}>Edit old book</button>
               </div>
             </div>
+          </div>
         </motion.div>
     </PagewithSidabarHeader>
   )
