@@ -16,7 +16,7 @@ export default function digitalizeBookForm({isNew}: DigitalizationFormInput) {
         <h3 >Author</h3>
         <input className={styles.inputBookInfo} type="text" name="author" id="author" />
 
-        <h3 style={{display: !isNew? 'none': 'inherit'}}>Description</h3>
+        <h3 style={{display: !isNew? 'none': 'inherit'}}>Description</h3> 
         <input className={styles.inputBookInfo} style={{display: !isNew? 'none': 'inherit'}} type="text" name="description" id="description" />
 
         <h3 style={{display: !isNew? 'none': 'inherit'}}>Publisher</h3>

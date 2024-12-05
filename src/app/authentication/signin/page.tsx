@@ -1,4 +1,5 @@
 import { signIn } from "@/auth"
+import { redirect } from "next/navigation"
  
 export default function SignIn() {
   return (
@@ -6,6 +7,7 @@ export default function SignIn() {
       action={async (formData) => {
         "use server"
         await signIn("credentials", formData)
+        // redirect("/")
       }}
     >
       <label>
@@ -16,6 +18,7 @@ export default function SignIn() {
         Password
         <input name="password" type="password" />
       </label>
+      <input type="hidden" name="redirectTo" value="/" />
       <button>Sign In</button>
     </form>
   )

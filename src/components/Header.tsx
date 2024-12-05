@@ -1,15 +1,20 @@
 "use client"
 import React from 'react'
 import { motion } from 'motion/react'
-import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
-import Link from 'next/link'
-import mock_img from '@/assets/mock/Doy_avatar.jpg'
+// import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
+// import Link from 'next/link'
+// import mock_img from '@/assets/mock/Doy_avatar.jpg'
+// import { auth } from '@/auth'
+// import LeftHeaderContainer from './LeftHeaderContainer'
+import { SessionProvider } from 'next-auth/react'
 
 type HeaderInput = {
     expand?: boolean
 }
-
-export default function Header({expand} : HeaderInput) {
+export default function Header({children}:Readonly<{
+    children: React.ReactNode;
+  }>) {
+    // const session = await auth()
   return (
     <header style={headerStyle}>
         <motion.div style={leftContatinerStyle}
@@ -27,14 +32,14 @@ export default function Header({expand} : HeaderInput) {
         transition={{type:'spring',damping:18,mass:0.75}}
         initial={{opacity:0,x:1000}} animate={{opacity:1,x:0}}
         >
-            {/* <Link href="/profile" style={avatarLinkStyle}>
-                <motion.img src={mock_img.src} alt="avatar" style={avatarStyle} initial={{opacity:0,x:100}} animate={{opacity:1,x:0}}
-                />
-            </Link> */}
-            <a href="/authentication/signin">
-                <button className={buttonStyles.buttonsWhite} style={authenButton}>Sign in</button>
-            </a>
-            <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
+            {/* <LeftHeaderContainer></LeftHeaderContainer> */}
+            <SessionProvider>
+            {children}
+            </SessionProvider>
+            {/* <a href="/authentication/signin">
+                    <button className={buttonStyles.buttonsWhite} style={authenButton}>Sign in</button>
+                </a>
+                <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button> */}
         </motion.div>
     </header>
   )

@@ -43,10 +43,23 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         } catch (error) {
           if (error instanceof ZodError) {
             // Return `null` to indicate that the credentials are invalid
+            console.log("Error: ", ZodError)
             return null
           }
         }
       },
     }),
   ],
+  // pages: {
+  //   signIn: "/authentication/signin",
+  // },
+  // callbacks: {
+  //   async redirect({ url, baseUrl }) {
+  //     // Allows relative callback URLs
+  //     if (url.startsWith("/")) return `${baseUrl}${url}`
+  //     // Allows callback URLs on the same origin
+  //     else if (new URL(url).origin === baseUrl) return url
+  //     return baseUrl
+  //   }
+  // }
 })
