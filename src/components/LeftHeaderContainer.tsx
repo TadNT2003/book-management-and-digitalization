@@ -8,9 +8,10 @@ import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
 export default function LeftHeaderContainer() {
     const {data: session} = useSession()
     const login = session?.user
+    // console.log("Current user from header is:", login)
+    // console.log("Current session is:", session)
     // const login = false;
     if (login) {
-        console.log("Current user from header is:", login)
         return (
             <div>
             <Link href="/profile" style={avatarLinkStyle}>

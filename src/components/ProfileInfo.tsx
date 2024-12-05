@@ -15,7 +15,7 @@ export default function ProfileInfo({username}: ProfileInfoInput) {
     initial={{opacity:0,x:1000}}
     animate={{opacity:1,x:0}}
     >
-        <h3>{`${username}'s reading history`}</h3>
+        <h2 className={styles.userHistory}>{`${username}'s reading history`}</h2>
         <ul className={styles.bookList}>
             {
               books.map((book, i) => 

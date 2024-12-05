@@ -26,7 +26,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
  
           // logic to verify if the user exists
           user = await getUserFromDb(username, pwHash)
-          console.log("User in auth.ts: ", user)
+          // console.log("User in auth.ts: ", user)
  
           if (!user) {
             throw new Error("Invalid credentials.")
@@ -37,7 +37,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             username: user.username,
             password: user.password,
           }
-          console.log(loginUser)
+          // console.log(loginUser)
           return loginUser as any
 
         } catch (error) {
@@ -50,6 +50,24 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) { // User is available during sign-in
+        token.id = user.id
+        token.username = user.username
+        token.password = user.password
+      }
+      return token
+    },
+    async session({ session, user, token }) {
+      // session.user.id = token.id
+      session.user.password = token.password
+      session.user.username = token.username
+      // console.log("Session: ",session)
+      // console.log("Token: ",token)
+      return session
+    },
+  },
   // pages: {
   //   signIn: "/authentication/signin",
   // },

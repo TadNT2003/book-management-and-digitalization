@@ -13,7 +13,8 @@ export default async function page() {
             <h1>Login to access this</h1>
         )
     }
-    console.log("Current user is:", session.user)
+    // console.log("Current user is:", session.user)
+    // console.log("Current session is:", session)
   return (
     <PagewithSidabarHeader active={sidebarNavigationTitle.USER_PROFILE}>
         <div className={styles.sudoUserBackground}>
