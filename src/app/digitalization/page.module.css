@@ -1,0 +1,21 @@
+.newAndEditButtonContainer div {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(400px + 1.4rem);
+    display: flex;
+}
+
+.newAndEditButtonContainer button {
+    width: 13.1rem;
+    height: 2rem;
+    border-radius: 6px;
+    border: none;
+    background: rgb(218, 194, 167);
+    transition: background .2s ease-in-out;
+}
+
+.newAndEditButtonContainer button:hover:enabled {
+    background: rgb(197, 131, 57);
+}

@@ -20,7 +20,7 @@ export default function Bookcard({title, description, coverImage, onClick}: Book
 const cardStyle = {
     width: '200px',
     padding: '1rem',
-    borderRadius: '5px',
+    borderRadius: '20px',
     backgroundColor: '#f8eadd',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
     cursor: 'pointer',

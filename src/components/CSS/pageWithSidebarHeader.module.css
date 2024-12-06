@@ -1,0 +1,27 @@
+.main { 
+    display: flex;
+  }
+  
+.sidebarContainer {
+    /* width: 20%; */
+    display: inline-flex;
+  }
+  
+.contentContainer {
+    flex: 1;
+    /* width: 96%; */
+    margin-left: 2%;
+    /* margin-right: 2%; */
+  }
+  
+.header {
+    display: inline-block;
+    width: 100%;
+  }
+
+.mainContentContainer {
+    background-color: #f8eadd;
+    margin: 0 20px;
+    padding: 0px 1px;
+    border-radius: 20px;
+  }
