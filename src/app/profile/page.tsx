@@ -5,6 +5,7 @@ import Doy_mock from '@/assets/mock/Doy_avatar.jpg'
 import { auth, signOut } from '@/auth'
 import React from 'react'
 import ProfileInfo from '@/components/ProfileInfo'
+import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
 
 export default async function page() {
     const session = await auth()
@@ -25,12 +26,12 @@ export default async function page() {
                 <div className={styles.avatarContainer}>
                     <img src={Doy_mock.src} alt="avatar" className={styles.avatar}/>
                 </div>
-                <button className={styles.buttons} onClick={async () => {
+                <button className={`${styles.buttons} ${buttonStyles.buttonBold}`} onClick={async () => {
                     "use server"
                     await signOut({redirectTo: "/"})
                 }
                 }>Logout</button>
-                <button className={styles.buttons}>Edit info</button>
+                <button className={`${styles.buttons} ${buttonStyles.buttonsWhite}`}>Edit info</button>
             </div>
             <div className={styles.rightContainer}>
                 <ProfileInfo username={session.user.username}></ProfileInfo>
