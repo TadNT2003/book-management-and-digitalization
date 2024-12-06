@@ -3,14 +3,14 @@ declare module "next-auth" {
         user: {
             id: string,
             username: string,
-            password: string,
+            // password: string,
         } 
         // & DefaultSession["user"]
     }
     interface User {
-        // id: string|undefined,
+        id: string,
         username: string,
-        password: string,
+        // password: string,
     }
 }
 
@@ -22,6 +22,7 @@ declare module "next-auth/jwt" {
   interface JWT {
     /** OpenID ID Token */
     idToken?: string,
+    // id: string,
     username: string,
     password: string
   }

@@ -1,16 +1,16 @@
 type user = {
-  // id: string,
+  id: string,
   username: string,
   password: string,
 }
 export const Users:Array<user> = [
   {
-    // id: '01',
+    id: '01',
     username: 'Dat',
     password: '012345678'
   },
   {
-    // id: '02',
+    id: '02',
     username: 'Cuong',
     password: '987654321'
   },

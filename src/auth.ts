@@ -34,8 +34,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
  
           // return JSON object with the user data
           const loginUser:User = {
+            id: user.id,
             username: user.username,
-            password: user.password,
+            // password: user.password,
           }
           // console.log(loginUser)
           return loginUser as any
@@ -55,13 +56,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (user) { // User is available during sign-in
         token.id = user.id
         token.username = user.username
-        token.password = user.password
+        // token.password = user.password
       }
       return token
     },
-    async session({ session, user, token }) {
-      // session.user.id = token.id
-      session.user.password = token.password
+    async session({ session, token }) {
+      if (token.id) {
+        session.user.id = String(token.id)
+      }
+      // session.user.password = token.password
       session.user.username = token.username
       // console.log("Session: ",session)
       // console.log("Token: ",token)
