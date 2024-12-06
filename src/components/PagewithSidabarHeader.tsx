@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import styles from './CSS/pageWithSidebarHeader.module.css'
+import LeftHeaderContainer from './LeftHeaderContainer'
 
 export default function PagewithSidabarHeader({children, active}: Readonly<{children?: React.ReactNode; active: sidebarNavigationTitle}>) {
   const [expand, setExpand] = useState(true)
@@ -17,7 +18,9 @@ export default function PagewithSidabarHeader({children, active}: Readonly<{chil
       </div>
       <div className={styles.contentContainer}>
         <section className={styles.header}>
-          <Header expand={expand}/>
+          <Header>
+            <LeftHeaderContainer></LeftHeaderContainer>
+          </Header>
         </section>
         <div className={styles.mainContentContainer}>
           {/* <h1>{ref.current? 'Ok': 'Null'}</h1> */}

@@ -1,0 +1,11 @@
+.bookList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.userHistory {
+    padding-left: 40px;
+    text-transform: uppercase;
+}

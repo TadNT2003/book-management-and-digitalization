@@ -74,6 +74,7 @@
     margin-top: 1.5rem;
     height: 2rem;
     border: none;
+    color: white;
     background: rgb(197, 131, 57);
     transition: background .2s ease-in-out;
     border-radius: 6px;
