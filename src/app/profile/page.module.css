@@ -18,17 +18,21 @@
 }
 
 .leftContainer {
-    width: 200px;
+    width: 250px;
     padding: 0.75rem 1rem;
     padding-bottom: 1.25rem;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: calc(300px + 11rem);
+    /* height: calc(300px + 11rem); */
+    height: fit-content;
 }
 
 .avatarContainer {
     margin-bottom: 2rem;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .avatar {
@@ -47,10 +51,20 @@
     padding-right: 0.75rem;
     font-weight: 700;
     font-size: 25px;
+    /* flex-wrap: wrap; */
 }
 
 .userInfo span {
     padding-left: 0.5rem;
+    /* overflow: visible; */
+    /* display: inline; */
+    /* flex-wrap: wrap; */
+}
+
+.buttonContainer {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .buttons {

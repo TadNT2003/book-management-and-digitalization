@@ -31,17 +31,19 @@ export default async function page() {
                      <User size={30}></User><span> {session.user.userName}</span>
                 </div>
                 <div className={styles.userInfo}>
-                     <Mail size={30}></Mail><span> {session.user.email}</span>
+                     <Mail size={30}></Mail><a href={session.user.email}><span>Email contact</span></a>
                 </div>
                 <div className={styles.userInfo}>
                     <Cake size={30}></Cake><span> {session.user.dob}</span>
                 </div>
+                <div className={styles.buttonContainer}>
                 <button style={{marginTop: '1rem'}} className={`${styles.buttons} ${buttonStyles.buttonBold}`} onClick={async () => {
                     "use server"
                     await signOut({redirectTo: "/"})
                 }
                 }>Logout</button>
                 <button className={`${styles.buttons} ${buttonStyles.buttonsWhite}`}>Edit info</button>
+                </div>
             </div>
             <div className={styles.rightContainer}>
                 <ProfileInfo username={session.user.userName}></ProfileInfo>
