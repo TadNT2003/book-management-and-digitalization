@@ -24,7 +24,9 @@ export default function LeftHeaderContainer() {
                 <a href="/authentication/signin">
                     <button className={buttonStyles.buttonsWhite} style={authenButton}>Sign in</button>
                 </a>
-                <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
+                <a href="/authentication/signup">
+                    <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
+                </a>
             </div>
         );
 }

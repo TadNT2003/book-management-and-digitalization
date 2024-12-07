@@ -6,6 +6,7 @@ import { auth, signOut } from '@/auth'
 import React from 'react'
 import ProfileInfo from '@/components/ProfileInfo'
 import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
+import { Cake, Mail, User } from 'lucide-react'
 
 export default async function page() {
     const session = await auth()
@@ -26,7 +27,16 @@ export default async function page() {
                 <div className={styles.avatarContainer}>
                     <img src={Doy_mock.src} alt="avatar" className={styles.avatar}/>
                 </div>
-                <button className={`${styles.buttons} ${buttonStyles.buttonBold}`} onClick={async () => {
+                <div className={styles.userInfo}>
+                     <User size={30}></User><span> {session.user.userName}</span>
+                </div>
+                <div className={styles.userInfo}>
+                     <Mail size={30}></Mail><span> {session.user.email}</span>
+                </div>
+                <div className={styles.userInfo}>
+                    <Cake size={30}></Cake><span> {session.user.dob}</span>
+                </div>
+                <button style={{marginTop: '1rem'}} className={`${styles.buttons} ${buttonStyles.buttonBold}`} onClick={async () => {
                     "use server"
                     await signOut({redirectTo: "/"})
                 }
@@ -34,7 +44,7 @@ export default async function page() {
                 <button className={`${styles.buttons} ${buttonStyles.buttonsWhite}`}>Edit info</button>
             </div>
             <div className={styles.rightContainer}>
-                <ProfileInfo username={session.user.username}></ProfileInfo>
+                <ProfileInfo username={session.user.userName}></ProfileInfo>
             </div>
         </div>
     </PagewithSidabarHeader>

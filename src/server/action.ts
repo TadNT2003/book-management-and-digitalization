@@ -1,3 +1,5 @@
+import { readingHistoryItem } from "@/lib/dto";
+
 export async function serverTest() {
     const data = await fetch('');
     const response = await data.json()
@@ -16,23 +18,27 @@ export async function loginUser(username: string, password: string) {
     )
 }
 
-export async function registerUser(formData: FormData) {
-    const username = formData.get("username")
-    const password = formData.get("password")
-    const email = formData.get("email")
-    const dob = formData.get("dob")
+export async function registerUser(username: string, password: string, email: string, dob: string) {
+    // const username = formData.get("username")
+    // const password = formData.get("password")
+    // const email = formData.get("email")
+    // const dob = formData.get("dob")
+    console.log("FormData: ",username, " ", password, " ", email, " ", dob)
     const data = await fetch('http://localhost:8080/api/users/createUsers', {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         userName: username,
         email: email,
         password: password,
         dob: dob,
         readingHistory: []
-      })
+      }),
     })
     const response = await data.json()
-    console.log(response)
+    return response
 }
 
 export async function getUserMetaInfo() {
