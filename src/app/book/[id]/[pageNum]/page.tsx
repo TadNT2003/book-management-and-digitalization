@@ -6,11 +6,12 @@ export default async function BookPage({params,} : {
     params: Promise<{id: string, pageNum: number}>
 }) {
     const {id, pageNum} = await params
-    console.log(id, pageNum)
+    // console.log(id, pageNum)
     // const selectedBook = await getBookById(id)
-    const content = await getBookContentByPage(id, pageNum);
+    const {title, content} = await getBookContentByPage(id, pageNum);
+    // console.log(content)
   return (
-    <ReadPage content={content}></ReadPage>
+    <ReadPage content={String(content)} title={title}></ReadPage>
     // <div>Test</div>
   )
 }

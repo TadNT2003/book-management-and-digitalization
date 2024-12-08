@@ -22,9 +22,10 @@ declare module 'slate' {
 }
 
 type ReadPageInput = {
+    title: string,
     content: string
 }
-export default function ReadPage({content}: ReadPageInput) {
+export default function ReadPage({content, title}: ReadPageInput) {
     const {id, pageNum} = useParams()
     const [editor] = useState(() => withReact(createEditor()))
     const route = useRouter()
@@ -54,7 +55,7 @@ export default function ReadPage({content}: ReadPageInput) {
             <div className={styles.title}>
                 <h2 style={{textAlign:'center',textTransform:'uppercase', paddingLeft:'100px'}}>
                     {/* {selectedBook[0].title} */}
-                    Title
+                    {title}
                 </h2>
             </div>
             <div>

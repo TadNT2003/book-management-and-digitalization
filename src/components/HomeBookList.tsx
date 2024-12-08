@@ -28,7 +28,7 @@ export default function HomeBookList({books}: HomeBookListInput) {
                  animate={{opacity:1,x:0}}
                  key={i}>
                     <a href={`/book/${book.bookId}`} style={{textDecoration: 'none'}}>
-                     <BookCard title={book.title} coverImage={book.bookCover} description={book.description}></BookCard>
+                     <BookCard title={book.title} coverImage={book.bookCover} description={book.description} id={book.bookId}></BookCard>
                     </a>
                  </motion.li>
               )

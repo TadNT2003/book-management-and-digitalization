@@ -1,0 +1,6 @@
+.imageStyle {
+    background-color: black;
+    width: 100%;
+    aspect-ratio:1;
+    border-radius: 5px;
+}

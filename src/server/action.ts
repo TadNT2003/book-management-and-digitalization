@@ -58,17 +58,24 @@ export async function getBookForHome() {
   let books: Array<booksFromServer> = []
   const data = await fetch("http://localhost:8080/api/books/getAllBooks")
   response = await data.json()
-  console.log("Each books: ")
   response.map((book:any, i) => {
-    console.log(book)
-    console.log(book.bookCover)
+    // console.log(book)
+    // console.log(book.bookCover)
     // console.log(typeof book.bookId)
     // books[i].bookId = book.bookId
     books.push(book)
-    // console.log("books:", books)
-    console.log("-------------------------")
   })
     return books
+}
+
+export async function getBookCover(bookId: string) {
+  console.log(bookId)
+  const data = await fetch(`http://localhost:8080/api/books/getBookCover?fileName=${bookId}.PNG`)
+  const response = await data.blob()
+  // const response = await data
+  // console.log(data)
+  // console.log("-----------------------------------------------")
+  return response
 }
 
 export async function getBookById(bookId: string) {
@@ -81,8 +88,12 @@ export async function getBookById(bookId: string) {
 
 export async function getBookContentByPage(id: string, pageNum: number) {
   const data = await fetch(`http://localhost:8080/api/books/getBookPage/${id}/pageNumber${pageNum}`)
-  const response = await data.text()
-  return response
+  const response = await data.json()
+  const title = Object.keys(response)[0]
+  return {
+    title: title,
+    content: response[title]
+  }
 }
 
 export async function registerNewBook() {
