@@ -18,7 +18,7 @@ export default async (formData: FormData) => {
     try {
       const {username, password, email, dob} = await signUpSchema.parseAsync(credentials)
       const resgiter = await registerUser(username, password, email, dob)
-      console.log("response from register:", resgiter)
+    //   console.log("response from register:", resgiter)
       const res = await signIn("credentials", {
         username: resgiter.userName,
         password: resgiter.password,

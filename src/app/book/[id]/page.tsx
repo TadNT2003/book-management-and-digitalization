@@ -1,71 +1,41 @@
 "use client"
-import { books } from '@/constants/mockData'
+import PagewithSidabarHeader from '@/components/PagewithSidabarHeader'
+import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import { motion } from 'motion/react'
-import { useParams, useRouter } from 'next/navigation'
+import { books } from '@/constants/mockData'
+import React from 'react'
 import styles from './page.module.css'
-import React, { useState } from 'react'
-// import '@fortawesome/fontawesome-free/css/all.min.css'
-import { createEditor, BaseEditor, Descendant } from 'slate'
-import { Slate, Editable, withReact, ReactEditor  } from 'slate-react'
-import { ChevronLeft, Cog, Search, Share2 } from 'lucide-react'
-// import { useRouter } from 'next/router'
+import { useParams, useRouter } from 'next/navigation'
 
-type CustomElement = { type: 'paragraph'; children: CustomText[] }
-type CustomText = { text: string }
-
-declare module 'slate' {
-    interface CustomTypes {
-        Editor: BaseEditor & ReactEditor
-        Element: CustomElement
-        Text: CustomText
-    }
-}
-
-export default function BookPage() {
-    const {id} = useParams()
-    const [editor] = useState(() => withReact(createEditor()))
+export default function page() {
     const route = useRouter()
-    
+    const {id} = useParams()
     const selectedBook = books.filter((book, i) => {
         return id === String(book.id)
     })
-    if (!selectedBook.length) return <p>Book not found</p>
-    
-    const initialValue: Descendant[] = [
-        {
-          type: 'paragraph',
-          children: [{ text: selectedBook[0].content }],
-        },
-      ]
-    return (
-        // <motion.div transition={{type:'spring', damping:40, mass:0.75}}
-        //    initail={{opacity:0,x:100}} animate={{opactity:1,x:0}}>Bookpage {id} {JSON.stringify(selectedBook[0])}</motion.div>
-    <motion.div transition={{type:'spring', damping:40, mass:0.75}}
-        initial={{opacity:0,x:1000}} animate={{opacity:1,x:0}}>
-       <motion.section transition={{type:'spring', damping:44, mass:0.75}}
-        initial={{opacity:0,y:-1000}} animate={{opacity:1,y:0}}
-        className={styles.appBar}>
-            <div className={styles.leftIcon} onClick={() => route.back()}>
-                <ChevronLeft className={styles.icons} size={20}></ChevronLeft>
+  return (
+    <PagewithSidabarHeader active={sidebarNavigationTitle.HOME}>
+        <motion.div
+        transition={{type:'spring', damping:50,mass:0.75}}
+        initial={{opacity:0,x:1000}}
+        animate={{opacity:1,x:0}}>
+            <div className={styles.bookCover}>
+                <img src={selectedBook[0].image}></img>
             </div>
-            <div className={styles.title}>
-                <h2 style={{textAlign:'center',textTransform:'uppercase', paddingLeft:'100px'}}>
-                    {selectedBook[0].title}
-                </h2>
+            <div className={styles.bookInfoContainer}>
+                <h2 className={styles.bookTitle}>{selectedBook[0].title}</h2>
+                <ul className={styles.bookInfoList}>
+                    <li><span>Author: {selectedBook[0].author}</span></li>
+                </ul>
+                <button className={styles.readButton} onClick={() => {
+                    route.push(`/book/${id}/1`)
+                }}>Read</button>
             </div>
-            <div>
-                {/* <button className={styles.saveButton}>Save</button> */}
-                <Cog className={styles.icons} size={20} style={{marginRight:'20px'}}></Cog>
-                <Share2 className={styles.icons} size={20} style={{marginRight:'20px'}}></Share2>
-                <Search className={styles.icons} size={20} style={{marginRight:'20px'}}></Search>
+            <div className={styles.descriptionContainer}>
+                <h3>Description</h3>
+                <span>{selectedBook[0].description}</span>
             </div>
-        </motion.section>
-        <div className={styles.editorContainer}>
-            <Slate editor={editor} initialValue={initialValue}>
-                <Editable className={styles.editor} readOnly />
-            </Slate> 
-        </div>
-
-    </motion.div>
+        </motion.div>
+    </PagewithSidabarHeader>
   )
 }

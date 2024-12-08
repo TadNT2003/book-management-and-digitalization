@@ -1,8 +1,18 @@
+"use server"
 import { readingHistoryItem } from "@/lib/dto";
 
-export async function serverTest() {
-    const data = await fetch('');
-    const response = await data.json()
+export async function serverTest(formData: FormData) {
+  console.log(formData)
+    const data = await fetch('http://localhost:8080/ocr/addImage(testOCR)', {
+      method: "POST",
+      // mode: 'no-cors',
+      // headers: {
+      //     'Content-Type': 'multipart/form-data'
+      // },
+      body: formData
+    });
+    const response = await data.text()
+    console.log(response)
   return (
     response
   )
@@ -19,10 +29,6 @@ export async function loginUser(username: string, password: string) {
 }
 
 export async function registerUser(username: string, password: string, email: string, dob: string) {
-    // const username = formData.get("username")
-    // const password = formData.get("password")
-    // const email = formData.get("email")
-    // const dob = formData.get("dob")
     console.log("FormData: ",username, " ", password, " ", email, " ", dob)
     const data = await fetch('http://localhost:8080/api/users/createUsers', {
       method: "POST",
@@ -61,6 +67,6 @@ export async function registerNewBook() {
   
 }
 
-export async function editOldBook() {
+export async function editOldBook(bookId: string, pageNumber: number, page: File) {
   
 }

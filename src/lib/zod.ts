@@ -1,4 +1,4 @@
-import { array, number, object, string } from "zod"
+import { any, array, number, object, string } from "zod"
 
 
 const readingHistorySchema = object({
@@ -27,4 +27,13 @@ export const signUpSchema = object({
   email: string(),
   dob: string(),
   // readingHistory: array(readingHistorySchema)
+})
+
+export const bookDigitalizeSchema = object({
+  title: string(),
+  author: string(),
+  description: string(),
+  publisher: string(),
+  cover: any(),
+  pages: any(),
 })
