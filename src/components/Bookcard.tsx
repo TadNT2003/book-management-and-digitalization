@@ -8,9 +8,15 @@ type BookcardInput = {
 }
 
 export default function Bookcard({title, description, coverImage, onClick}: BookcardInput) {
+    const file_path = `file:///${coverImage}`
+    // console.log("file link: ",file_path)
+    // console.log("file path: ", coverImage)
+    // console.log(process.env.NODE_ENV)
+    // URL.createObjectURL('blob:http://localhost:8080/1f33ad39-9d15-46ab-a8f1-162edf88bdc2')
+ 
   return (
     <div style={cardStyle} onClick={onClick}>
-        <img src={coverImage} alt={title} style={imageStyle}/>
+        <img src={`http:///localhost/D:/MSOB_FE/BE_MSOB/BE_DACN/book/Book_Cover/67551b2dbaae844d52d9eeda.PNG`} alt={title} style={imageStyle}/>
         <h3 style={titleStyle}>{title}</h3>
         <p style={descriptionStyle}>{description}</p>
     </div>

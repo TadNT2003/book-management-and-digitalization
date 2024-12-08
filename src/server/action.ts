@@ -1,5 +1,7 @@
 "use server"
-import { readingHistoryItem } from "@/lib/dto";
+import { booksFromServer, readingHistoryItem } from "@/lib/dto";
+
+// export let booksList: Array<booksFromServer> = []
 
 export async function serverTest(formData: FormData) {
   console.log(formData)
@@ -52,11 +54,41 @@ export async function getUserMetaInfo() {
 }
 
 export async function getBookForHome() {
-  
+  let response: []
+  let books: Array<booksFromServer> = []
+  const data = await fetch("http://localhost:8080/api/books/getAllBooks")
+  response = await data.json()
+  console.log("Each books: ")
+  response.map((book:any, i) => {
+    console.log(book)
+    console.log(book.bookCover)
+    // console.log(typeof book.bookId)
+    // books[i].bookId = book.bookId
+    books.push(book)
+    // console.log("books:", books)
+    console.log("-------------------------")
+  })
+    return books
 }
 
-export async function getBookById() {
-  
+export async function getBookById(bookId: string) {
+  const data = await fetch(`http://localhost:8080/api/books/getBookById/${bookId}`)
+  const response = await data.json()
+  // const selectedBook: booksFromServer = {
+  //   bookId: response.bookId,
+  //   title: response.title,
+  //   description: response.description,
+  //   author: response.author,
+  //   publisher: response.publisher,
+  //   bookCover: response.bookCover,
+  //   totalPages: response.totalPages,
+  //   categories: response.categories,
+  //   cloudUrl: response.cloudUrl,
+  //   premium: response.premium
+  // }
+  let selectedBook: Array<booksFromServer> = []
+  selectedBook.push(response)
+  return selectedBook[0]
 }
 
 export async function getBookContentByPage() {
