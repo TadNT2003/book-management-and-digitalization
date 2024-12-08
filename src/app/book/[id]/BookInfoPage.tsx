@@ -13,22 +13,25 @@ type BookInfoPageInput = {
 export default function BookInfoPage({selectedBook}: BookInfoPageInput) {
     const route = useRouter()
     const {id} = useParams()
-    // const selectedBook = books.filter((book, i) => {
-    //     return id === String(book.id)
-    // })
   return (
     <PagewithSidabarHeader active={sidebarNavigationTitle.HOME}>
         <motion.div
         transition={{type:'spring', damping:50,mass:0.75}}
         initial={{opacity:0,x:1000}}
         animate={{opacity:1,x:0}}>
-            <div className={styles.bookCover}>
-                <img src={selectedBook.bookCover}></img>
+            <div>
+                <img  className={styles.bookCover} src={`http://localhost:8080/api/books/getBookCover?fileName=${id}.PNG`} onError={(e) => {
+                    e.currentTarget.src = "/Image-not-found.png"
+                }}></img>
             </div>
             <div className={styles.bookInfoContainer}>
                 <h2 className={styles.bookTitle}>{selectedBook.title}</h2>
                 <ul className={styles.bookInfoList}>
                     <li><span>Author: {selectedBook.author}</span></li>
+                    <li><span>Publisher: {selectedBook.publisher}</span></li>
+                    <li><span>Total pages: {selectedBook.totalPages}</span></li>
+                    <li><span>Tags: {selectedBook.categories}</span></li>
+                    {/* <li><span>Author: {selectedBook.author}</span></li> */}
                 </ul>
                 <button className={styles.readButton} onClick={() => {
                     route.push(`/book/${id}/1`)

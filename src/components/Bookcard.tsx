@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './CSS/bookCard.module.css'
-import { getBookCover } from '@/server/action'
+// import { getBookCover } from '@/server/action'
 
 type BookcardInput = {
     title: string,
@@ -11,7 +11,6 @@ type BookcardInput = {
 }
 
 export default function Bookcard({title, description, coverImage, id, onClick}: BookcardInput) {
-    const file_path = `file:///${coverImage}`
 
   return (
     <div style={cardStyle} onClick={onClick}>

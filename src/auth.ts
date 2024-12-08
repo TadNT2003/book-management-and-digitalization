@@ -3,7 +3,7 @@ import { ZodError } from "zod"
 import Credentials from "next-auth/providers/credentials"
 import { loginUser } from '@/server/action'
 // Your own logic for dealing with plaintext password strings; be careful!
-import { saltAndHashPassword, getUserFromDb } from "@/constants/mockUsers"
+// import { saltAndHashPassword, getUserFromDb } from "@/constants/mockUsers"
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
