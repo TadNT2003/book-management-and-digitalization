@@ -3,7 +3,7 @@ export enum sidebarNavigationTitle {
     MANAGEMENT = 'Management',
     DIGITALIZATION = 'Digitalization',
     COMMUNITY = 'Community',
-    SELF_CREATION = 'Self creation',
+    SELF_CREATION = 'Fanfiction',
     SETTINGS = 'Settings',
     USER_PROFILE = 'Profile'
 }

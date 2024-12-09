@@ -4,24 +4,36 @@
   
 .sidebarContainer {
     /* width: 20%; */
-    display: inline-flex;
+    display: flex;
   }
   
 .contentContainer {
     flex: 1;
+    /* display: flex; */
     /* width: 96%; */
-    margin-left: 2%;
+    /* margin-left: 2%; */
     /* margin-right: 2%; */
   }
   
 .header {
+    height: fit-content;
     display: inline-block;
+    position: sticky;
+    padding: 10px 0;
+    background-color: white;
+    top: 0;
     width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 99;
   }
 
 .mainContentContainer {
-    background-color: #f8eadd;
-    margin: 0 20px;
+    /* position: relative; */
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 0 20px; */
     padding: 0px 1px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
   }
