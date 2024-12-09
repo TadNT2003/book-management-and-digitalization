@@ -22,7 +22,7 @@ export default function LeftHeaderContainer() {
     return (
             <div>
                 <a href="/authentication/signin">
-                    <button className={buttonStyles.buttonsWhite} style={authenButton}>Sign in</button>
+                    <button className={`${buttonStyles.buttonsWhite}`} style={authenButton}>Sign in</button>
                 </a>
                 <a href="/authentication/signup">
                     <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
@@ -33,7 +33,7 @@ export default function LeftHeaderContainer() {
 
 const authenButton = {
     width: '6rem', 
-    height:'3rem', 
+    height:'44px', 
     marginRight:'0.5rem',
     fontSize: '18px',
     fontWeight: '600'

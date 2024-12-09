@@ -103,7 +103,7 @@ const searchInputStyle = {
    marginRight: '3.6rem',
 //    margin: 'auto',
    borderRadius: '6px',
-   backgroundColor: 'rgb(248,234,221)',
+   backgroundColor: 'white',
    border: '2px solid #000',
    minWidth: '200px',  
 }

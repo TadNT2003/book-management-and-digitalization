@@ -6,7 +6,7 @@
     background-image: url("../../../../public/login-signup-bg.jpg");
 }
 
-.signInHeader {
+.signUpHeader {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@
 .formWrapper {
     position: relative;
     width: 400px;
-    height: 440px;
+    height: fit-content;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
@@ -96,6 +96,7 @@
     font-size: 1em;
     color: #fff;
     font-weight: 500;
+    margin-bottom: 25px;
 }
 
 .register {

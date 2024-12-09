@@ -30,7 +30,7 @@ const cardStyle = {
     width: '200px',
     padding: '1rem',
     borderRadius: '20px',
-    backgroundColor: '#f8eadd',
+    backgroundColor: 'white',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
     cursor: 'pointer',
     transition: 'transform 0.3s ease',
@@ -52,6 +52,8 @@ const contentStyle = {
   
 const titleStyle = {
     fontSize: '1.2rem',
+    height: '3rem',
+    overflow: 'hidden',
     marginBottom: '0.5rem',
     color:'#000'
 }
@@ -59,5 +61,7 @@ const titleStyle = {
 const descriptionStyle = {
     fontSize: '0.8rem',
     color: '#888',
+    height: '3rem',
+    overflow: 'hidden',
 }
   
