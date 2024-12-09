@@ -1,3 +1,54 @@
+.welcome {
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+.introductionSection{
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 20px;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.introductionImg {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.textContainer {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.textContainer p {
+  text-align: center;
+  line-height: 1.7rem;
+  font-size: 20px;
+  font-weight: 500;
+  /* font-family: sans-serif; */
+  display: block;
+  margin-bottom: 10px;
+}
+
+.newBookSection {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 20px;
+}
+
 .homePageTitle {
     padding-left: 40px;
   }
@@ -8,3 +59,8 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+.bookList li {
+  flex-grow: 1;
+  flex-basis: 0;
+}

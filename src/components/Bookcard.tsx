@@ -4,16 +4,16 @@ import styles from './CSS/bookCard.module.css'
 
 type BookcardInput = {
     title: string,
-    description: string,
+    author: string,
     coverImage: string,
     id: string,
     onClick?: any
 }
 
-export default function Bookcard({title, description, coverImage, id, onClick}: BookcardInput) {
+export default function Bookcard({title, author, coverImage, id, onClick}: BookcardInput) {
 
   return (
-    <div style={cardStyle} onClick={onClick}>
+    <div className={styles.cardStyle} onClick={onClick}>
 
         <img src={`http://localhost:8080/api/books/getBookCover?fileName=${id}.PNG`} className={styles.imageStyle} alt={title} style={imageBGStyle}
         onError={(e) => {
@@ -21,7 +21,7 @@ export default function Bookcard({title, description, coverImage, id, onClick}: 
         }}/>
         {/* <div title={title} className={styles.imageStyle} style={imageBGStyle}></div> */}
         <h3 style={titleStyle}>{title}</h3>
-        <p style={descriptionStyle}>{description}</p>
+        <p style={authorStyle}>{author}</p>
     </div>
   )
 }
@@ -52,16 +52,16 @@ const contentStyle = {
   
 const titleStyle = {
     fontSize: '1.2rem',
-    height: '3rem',
+    height: '2.8rem',
     overflow: 'hidden',
     marginBottom: '0.5rem',
     color:'#000'
 }
   
-const descriptionStyle = {
+const authorStyle = {
     fontSize: '0.8rem',
     color: '#888',
-    height: '3rem',
+    height: '1rem',
     overflow: 'hidden',
 }
   
