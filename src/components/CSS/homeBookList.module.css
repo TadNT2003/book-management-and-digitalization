@@ -43,6 +43,10 @@
   margin-bottom: 10px;
 }
 
+.fontPara {
+  font-family: var(--font-geist-sans);
+}
+
 .newBookSection {
   padding-bottom: 40px;
   border-bottom: 1px solid #eeeeee;

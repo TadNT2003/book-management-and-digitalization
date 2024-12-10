@@ -24,9 +24,9 @@ export default function HomeBookList({books}: HomeBookListInput) {
         <img className={styles.introductionImg} src="/desktop-920.jpg" alt="" />
         </div>
         <div className={styles.textContainer}>
-        <p>At Scanbooky, we specialize in scanning books to make them easily accessible online.</p>
-        <p>Our team is dedicated to preserving the beauty of physical books while providing the convenience of digital reading.</p>
-        <p>Discover a world of literature at your fingertips with Scanbooky. Join us in revolutionizing the way you read books online.</p>
+        <p className={styles.fontPara}>At Scanbooky, we specialize in scanning books to make them easily accessible online.</p>
+        <p className={styles.fontPara}>Our team is dedicated to preserving the beauty of physical books while providing the convenience of digital reading.</p>
+        <p className={styles.fontPara}>Discover a world of literature at your fingertips with Scanbooky. Join us in revolutionizing the way you read books online.</p>
         </div>
       </section>
       <section className={styles.newBookSection}>

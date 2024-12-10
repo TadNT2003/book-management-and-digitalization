@@ -14,10 +14,11 @@ const geistMono = localFont({
   weight: "100 900",
 });
 export const sourceSans3 = localFont({
-  src: "./fonts/SourceSans3-VariableFont_wght.ttf",
+  src: "./fonts/static/SourceSans3-Black.ttf",
   variable: "--font-soure-sans-3",
-  weight: "100 900",
-})
+  weight: "600",
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: "Scanbooky",

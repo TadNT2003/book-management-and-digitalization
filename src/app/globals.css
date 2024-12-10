@@ -6,8 +6,8 @@ body {
   /* width: 100vw; */
 }
 
-h1 h2 h3 h4 p span li a {
-  
+.source_san3 {
+  font-family: var(--font-soure-sans-3);
 }
 
 /* :root {
