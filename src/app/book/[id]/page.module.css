@@ -60,7 +60,7 @@
 }
 
 .pageListContainer {
-    padding-top: 10px;
+    /* padding-top: 10px; */
     padding-left: 40px;
 }
 
@@ -74,12 +74,38 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.pageListContainer ul li {
-    /* min-width: 150px; 
-    max-width: 800px;
-    height: 2rem;
+/* .pageListContainer ul li {
+    min-width: 200px;
+    max-width: 300px;
+    flex-basis: 0;
     flex-grow: 1;
-    flex-basis: 0; */
+    margin-bottom: 1.5rem;
+    margin-right: 1.6rem;
+} */
+
+.exploreSection {
+    padding-left: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 20px;
+}
+
+.bookList {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.bookList li {
+    min-width: 200px;
+    max-width: 300px;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    margin-right: 1.6rem;
 }

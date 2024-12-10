@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif ;
   color: #222269;
+  width: 100vw;
 }
 
 h1 h2 h3 h4 p span li a {

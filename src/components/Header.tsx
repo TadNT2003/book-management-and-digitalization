@@ -100,12 +100,12 @@ const motionLeftContainerStyle = {
 
 const searchInputStyle = {
    padding: '0.7rem 1rem',
-   marginRight: '3.6rem',
+   marginRight: '1rem',
 //    margin: 'auto',
    borderRadius: '6px',
    backgroundColor: 'white',
    border: '2px solid #000',
-   minWidth: '200px',  
+   minWidth: '150px',  
 }
 
 const rightContainerStyle = {

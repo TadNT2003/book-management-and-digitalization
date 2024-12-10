@@ -29,7 +29,7 @@
 }
 
 .navigatorListStyle {
-    margin-left: 1rem;
+    margin-inline: 1rem;
     list-style: none;
     display: inline-block;
     height: 100%;

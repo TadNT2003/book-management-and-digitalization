@@ -7,13 +7,15 @@ import React from "react";
 import styles from "./page.module.css";
 import { booksFromServer } from "@/lib/dto";
 import BookPageList from "@/components/bookPageList";
+import BookCard from '@/components/Bookcard'
 import { ChevronLeft } from "lucide-react";
 
 
 type BookInfoPageInput = {
     selectedBook: booksFromServer;
+    books?: booksFromServer[]
 };
-export default function BookInfoPage({ selectedBook }: BookInfoPageInput) {
+export default function BookInfoPage({ selectedBook, books }: BookInfoPageInput) {
     const route = useRouter();
     const { id } = useParams();
     function PageListElement() {
@@ -42,7 +44,7 @@ export default function BookInfoPage({ selectedBook }: BookInfoPageInput) {
         <ChevronLeft className={styles.backArrow}
           size={40}
           onClick={() => {
-            route.back();
+            route.replace("/");
           }}
         ></ChevronLeft>
       </div>
@@ -104,6 +106,26 @@ export default function BookInfoPage({ selectedBook }: BookInfoPageInput) {
                     {PageListElement()}
                 </ul>
           </div>
+          <section className={styles.exploreSection}>
+          <h3>Explore more </h3>
+          <ul className={styles.bookList}>
+            {
+              books?.reverse().map((book, i) => 
+                 <motion.li
+                 whileHover={{scale:1.1}}
+                 whileTap={{scale:0.9}}
+                 transition={{type:'spring', damping:50,mass:0.75}}
+                 initial={{opacity:0,x:200*(i+1)}}
+                 animate={{opacity:1,x:0}}
+                 key={i}>
+                    <a href={`/book/${book.bookId}`} style={{textDecoration: 'none'}}>
+                     <BookCard title={book.title} coverImage={book.bookCover} author={book.author} id={book.bookId}></BookCard>
+                    </a>
+                 </motion.li>
+              )
+            }
+          </ul>
+      </section>
         </div>
       
     </PagewithSidabarHeader>
