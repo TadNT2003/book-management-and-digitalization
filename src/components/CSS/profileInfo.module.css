@@ -2,7 +2,14 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+}
+
+.bookList li {
+    min-width: 200px;
+    max-width: 300px;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 .userHistory {

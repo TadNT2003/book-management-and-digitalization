@@ -6,7 +6,8 @@ import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import styles from "./page.module.css";
 import { booksFromServer } from "@/lib/dto";
-import BookPageList from "@/components/bookPageList";
+import buttonStyle from '@/components/CSS/buttonsStyle.module.css'
+import BookPageList from "@/components/BookPageList";
 import BookCard from '@/components/Bookcard'
 import { ChevronLeft } from "lucide-react";
 
@@ -77,7 +78,12 @@ export default function BookInfoPage({ selectedBook, books }: BookInfoPageInput)
                   <span>Total pages: {selectedBook.totalPages}</span>
                 </li>
                 <li>
-                    <span>Premium: <input type="checkbox" checked={selectedBook.premium} disabled/></span>
+                    <span className={styles.checkSpan}>Premium: 
+                      <input type="checkbox" id="checkbox" checked={selectedBook.premium} readOnly/>
+                      <label htmlFor="checkbox"></label>
+                      <div className={styles.checkbox}>
+                      </div>
+                    </span>
                 </li>
                 <li>
                   <span>Tags: {selectedBook.categories}</span>
@@ -85,7 +91,7 @@ export default function BookInfoPage({ selectedBook, books }: BookInfoPageInput)
                 {/* <li><span>Author: {selectedBook.author}</span></li> */}
               </ul>
               <button
-                className={styles.readButton}
+                className={`${styles.readButton} ${buttonStyle.buttonSemiBold}`}
                 onClick={() => {
                   route.push(`/book/${id}/1`);
                 }}

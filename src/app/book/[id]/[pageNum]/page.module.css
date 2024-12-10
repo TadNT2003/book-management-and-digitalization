@@ -36,7 +36,7 @@
 }
 
 .icons:hover{
-    background-color: #f8eadd;
+    /* background-color: #f8eadd; */
 }
 
 .titleStyles{
@@ -82,7 +82,8 @@
 }
 
 .activePage {
-    background-color: blue;
+    color: white;
+    background-color: #1c75ac;
 }
 
 .breakPage {
@@ -98,7 +99,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 210mm;
-    height: 297mm;
+    min-height: 297mm;
     padding-top: 1.9cm;
     padding-left: 1.9cm;
     padding-right: 1.32cm;

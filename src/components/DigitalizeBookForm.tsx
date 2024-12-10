@@ -74,7 +74,7 @@ export default function digitalizeBookForm({isNew, notLogin}: DigitalizationForm
                 <label>Description</label>
                 {/* <User size={30} className={styles.icon}></User> */}
                 <div>
-                <input {...formHook.register("description")} name="description" type="text" id="description"/>
+                <textarea {...formHook.register("description")} name="description" id="description"/>
                 </div>
           </div>
           {/* <h3 style={{display: !isNew? 'none': 'inherit'}}>Description</h3> 

@@ -5,26 +5,29 @@
     border-radius: 6px;
 }
 .buttonsWhite:hover {
-    background: rgb(231, 193, 150);
+    color: white;
+    background: #6cb6e5;
 }
 
 .buttonBold {
-    color: white;
+    color: #fff;
     border: none;
-    background: rgb(197, 131, 57);
+    background: #222269;
     transition: background .2s ease-in-out;
     border-radius: 6px;
 }
 .buttonBold:hover {
-    background: rgb(142, 92, 35);
+    background: #1c75ac;
+    color: white;
 }
 
 .buttonSemiBold {
+    color: white;
     border: none;
-    background: rgb(218, 194, 167);
+    background: #1c75ac;
     transition: background .2s ease-in-out;
     border-radius: 6px;
 }
 .buttonSemiBold:hover {
-    background: rgb(197, 131, 57);
+    background: #06456d;
 }

@@ -10,15 +10,14 @@ import { SessionProvider } from 'next-auth/react'
 import { sidebarNavigationTitle } from '@/constants/sidebarNavigation'
 import styles from './CSS/header.module.css'
 import logo from '../../public/Scanbooky Logo - Original with Transparent Background.svg'
-import logo_img from '../../public/Scanbooky Logo - Original with Transparent Background - 5000x5000.png'
 import Image from 'next/image'
 
-type HeaerNavigatorItemInput = {
+type HeaderNavigatorItemInput = {
     text: sidebarNavigationTitle,
     active: sidebarNavigationTitle,
     onClick: string,
 }
-export function HeaerNavigator({text, active, onClick}: HeaerNavigatorItemInput) {
+export function HeaderNavigator({text, active, onClick}: HeaderNavigatorItemInput) {
     return (
             <a href={onClick} className={styles.navigatorItemStyle}>
             <span>{text}</span>
@@ -46,11 +45,11 @@ export default function Header({children, active, expand}: HeaderInput) {
             </a>
             {/* <img className={styles.bookTitleStyle} src="/Scanbooky Logo - Original with Transparent Background - 5000x5000.png" alt="Scanbooky logo" /> */}
             <div className={styles.navigatorListStyle}>
-                <HeaerNavigator text={sidebarNavigationTitle.HOME} active={active} onClick='/'></HeaerNavigator>
-                <HeaerNavigator text={sidebarNavigationTitle.DIGITALIZATION} active={active} onClick='/digitalization'></HeaerNavigator>
-                <HeaerNavigator text={sidebarNavigationTitle.MANAGEMENT} active={active} onClick='/management'></HeaerNavigator>
-                <HeaerNavigator text={sidebarNavigationTitle.COMMUNITY} active={active} onClick='/community'></HeaerNavigator>
-                <HeaerNavigator text={sidebarNavigationTitle.SELF_CREATION} active={active} onClick='/self_creation'></HeaerNavigator>
+                <HeaderNavigator text={sidebarNavigationTitle.HOME} active={active} onClick='/'></HeaderNavigator>
+                <HeaderNavigator text={sidebarNavigationTitle.DIGITALIZATION} active={active} onClick='/digitalization'></HeaderNavigator>
+                <HeaderNavigator text={sidebarNavigationTitle.MANAGEMENT} active={active} onClick='/management'></HeaderNavigator>
+                <HeaderNavigator text={sidebarNavigationTitle.COMMUNITY} active={active} onClick='/community'></HeaderNavigator>
+                <HeaderNavigator text={sidebarNavigationTitle.SELF_CREATION} active={active} onClick='/self_creation'></HeaderNavigator>
             </div>
         </nav>
         </motion.div>

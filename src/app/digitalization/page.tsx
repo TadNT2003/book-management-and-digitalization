@@ -29,7 +29,7 @@ export default function DigitalizationPage() {
               </form> */}
               <div>
                 <button disabled={isNew} onClick={() => setIsNew(true)}>Upload new book</button>
-                <button disabled={!isNew} onClick={() => setIsNew(false)}>Edit uploaded book</button>
+                <button disabled onClick={() => setIsNew(false)}>Edit uploaded book</button>
               </div>
             </div>
           </div>

@@ -23,18 +23,18 @@ export default async function page() {
 
         </div>
         <div className={styles.profileContainer}>
-            <div className={styles.leftContainer}>
+            <div className={styles.topContainer}>
                 <div className={styles.avatarContainer}>
                     <img src={Doy_mock.src} alt="avatar" className={styles.avatar}/>
                 </div>
                 <div className={styles.userInfo}>
                      <User size={30}></User><span> {session.user.userName}</span>
                 </div>
-                <div className={styles.userInfo}>
-                     <Mail size={30}></Mail><a href={session.user.email}><span>Email contact</span></a>
+                <div className={styles.userInfo} style={{paddingLeft: '20px'}}>
+                     <Mail size={15}></Mail><a href={session.user.email}><span>{session.user.email}</span></a>
                 </div>
-                <div className={styles.userInfo}>
-                    <Cake size={30}></Cake><span> {session.user.dob}</span>
+                <div className={styles.userInfo} style={{paddingLeft: '20px', fontSize: '15px'}}>
+                    <Cake size={15}></Cake><span> {session.user.dob}</span>
                 </div>
                 <div className={styles.buttonContainer}>
                 <button style={{marginTop: '1rem'}} className={`${styles.buttons} ${buttonStyles.buttonBold}`} onClick={async () => {
@@ -45,7 +45,7 @@ export default async function page() {
                 <button className={`${styles.buttons} ${buttonStyles.buttonsWhite}`}>Edit info</button>
                 </div>
             </div>
-            <div className={styles.rightContainer}>
+            <div className={styles.botContainer}>
                 <ProfileInfo username={session.user.userName}></ProfileInfo>
             </div>
         </div>
