@@ -69,16 +69,16 @@ export default function BookInfoPage({ selectedBook, books }: BookInfoPageInput)
               {/* <h2 className={styles.bookTitle}>{selectedBook.title}</h2> */}
               <ul className={styles.bookInfoList}>
                 <li>
-                  <span>Author: {selectedBook.author}</span>
+                  <span className={styles.infoTitle}>Author: </span><span>{selectedBook.author}</span>
                 </li>
                 <li>
-                  <span>Publisher: {selectedBook.publisher}</span>
+                  <span className={styles.infoTitle}>Publisher: </span><span>{selectedBook.publisher}</span>
                 </li>
                 <li>
-                  <span>Total pages: {selectedBook.totalPages}</span>
+                  <span className={styles.infoTitle}>Total pages: </span><span>{selectedBook.totalPages}</span>
                 </li>
                 <li>
-                    <span className={styles.checkSpan}>Premium: 
+                    <span className={`${styles.checkSpan} ${styles.infoTitle}`}>Premium: 
                       <input type="checkbox" id="checkbox" checked={selectedBook.premium} readOnly/>
                       <label htmlFor="checkbox"></label>
                       <div className={styles.checkbox}>
@@ -86,7 +86,7 @@ export default function BookInfoPage({ selectedBook, books }: BookInfoPageInput)
                     </span>
                 </li>
                 <li>
-                  <span>Tags: {selectedBook.categories}</span>
+                <span className={styles.infoTitle}>Tags: </span><span>{selectedBook.categories}</span>
                 </li>
                 {/* <li><span>Author: {selectedBook.author}</span></li> */}
               </ul>

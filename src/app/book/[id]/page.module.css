@@ -28,6 +28,7 @@
 
 .bookTitle {
     margin-bottom: 40px;
+    font-size: 50px;
 }
 
 .bookInfoContainer {
@@ -45,6 +46,10 @@
 
 .bookInfoList li span {
     font-size: 24px;
+}
+
+.infoTitle {
+    font-weight: 600;
 }
 
 .checkSpan input[type="checkbox"] {
