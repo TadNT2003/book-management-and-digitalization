@@ -1,18 +1,101 @@
 .bookForm {
     padding-left: 40px;
     padding-right: 40px;
-    text-align: center;
+    /* text-align: center; */
+}
+
+.formTitle {
+    margin-bottom: 0;
+}
+
+.titleAuthorPub {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 9rem;
 }
 
 .inputBookInfo {
-    padding: 0.4rem 0.7rem;
-    /* marginLeft: 3.6rem, */
-    /* height: 2rem; */
-    margin: auto;
+    max-width: 510px;
+    min-width: 100px;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-right: 10px;
+    padding-block: 0.8rem;
+    height: 100%;
+}
+
+.inputBookInfo label {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.inputBookInfo .icon {
+    position: relative;
+    top: 1rem;
+    color: #162938;
+    z-index: 1;
+    line-height: 57px;
+}
+
+.inputBookInfo input {
+    position: relative;
+    bottom: 30px;
     border-radius: 6px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid #000;
-    min-width: 400px;
+    border: 1px solid #888;
+    padding: 0.7rem 1rem;
+    padding-left: calc(1rem + 14px);
+
+    font-size: 16px;
+    width: 85%;
+    height: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .inputBookInfo input {
+        max-width: 8rem;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1250px) {
+    .inputBookInfo input {
+        max-width: 11rem;
+    }
+}
+
+.inputBookDes {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eeeeee;
+}
+
+.inputBookDes label {
+    display: block;
+    font-size: 1.17em;
+    /* margin-top: 1em; */
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inputBookDes input {
+    /* position: relative; */
+    /* bottom: 30px; */
+    border-radius: 6px;
+    border: 1px solid #888;
+    padding: 0.7rem 1rem;
+
+    font-size: 16px;
+    width: calc(100% - 3rem);
+    /* width: 100%; */
+    height: 8rem;
 }
 
 .fileUpload {
@@ -24,11 +107,12 @@
 .dropContainer {
     position: relative;
     display: flex;
-    margin-inline: 20%;
+    /* margin-inline: 20%; */
     gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: calc(100% - 55px);
     height: 150px;
     padding: 20px;
     border-radius: 10px;
@@ -68,6 +152,11 @@
 
 .fileInput[type=file]::file-selector-button:hover {
     background: rgb(142, 92, 35);
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
 }
 
 .submitButton {
