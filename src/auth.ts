@@ -29,14 +29,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           // console.log("user: ", user)
  
           if (!user) {
-            throw new Error("Invalid credentials.")
+            return {error: "Invalid credentials"}
           }
  
           // return JSON object with the user data
           return user
 
         } catch (error) {
-          return {error: "Wrong credentials"}
+          return {error: "Server failure"}
         }
       },
     }),
@@ -63,8 +63,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session
     },
     async signIn({ user, account, profile, email, credentials }) {
-      if (user?.error === "Wrong credentials") {
-        return false
+      if (user?.error) {
+        throw new Error(user.error)
       }
       return true
     },

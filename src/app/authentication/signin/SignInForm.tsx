@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
-import React from "react";
+import React, { useActionState } from "react";
 import { ChevronLeft, KeyRoundIcon, Mail, User } from "lucide-react";
 
 
@@ -13,6 +13,8 @@ type SignInFormInput = {
 };
 export default function SignInForm({ signInFormAction }: SignInFormInput) {
   const route = useRouter()
+  // const [loginError, signInAction] = useActionState(signInFormAction, "")
+
   return (
     <div className={styles.wholeScreen}>
       <header className={styles.signInHeader}>

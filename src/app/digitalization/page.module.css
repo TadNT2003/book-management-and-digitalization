@@ -12,10 +12,10 @@
     height: 2rem;
     border-radius: 6px;
     border: none;
-    background: rgb(218, 194, 167);
+    background: #8cc7ec;
     transition: background .2s ease-in-out;
 }
 
 .newAndEditButtonContainer button:hover:enabled {
-    background: rgb(197, 131, 57);
+    background: #42a6e5;
 }

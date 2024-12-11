@@ -17,19 +17,19 @@ export default async (formData: FormData) => {
         username: username,
         password: password,
         redirect: false,
-      }).then(() => {
-        redirect("/")
-      }
-      )  
+      })
+      console.log(res)
     } catch (error) {
       if (error instanceof ZodError) {
         console.log(error.issues[0].message)
-      }
-      else if (isRedirectError(error)) {
-        throw error  
+        throw new Error(error.issues[0].message)
       }
       else if (error instanceof Error) {
         console.log(error.message);
+        throw new Error("Invalid credentials")
       }
+      throw error
+      // return "There is some error"
     }
+    redirect("/")
   }
