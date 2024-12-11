@@ -13,8 +13,13 @@
     "lucide-react": "^0.462.0",
     "motion": "^12.0.0-alpha.2",
     "next": "15.0.2",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "next-auth": "^5.0.0-beta.25",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "slate": "^0.110.2",
+    "slate-dom": "^0.111.0",
+    "slate-react": "^0.111.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
