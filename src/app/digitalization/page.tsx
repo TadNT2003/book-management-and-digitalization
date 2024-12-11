@@ -5,6 +5,7 @@ import DigitalizeBookForm from '@/components/DigitalizeBookForm'
 import { motion } from 'motion/react'
 import styles from './page.module.css'
 import React, { useState } from 'react'
+// import { serverTest } from '@/server/action'
 
 export default function DigitalizationPage() {
   const [isNew, setIsNew] = useState(true)
@@ -18,6 +19,10 @@ export default function DigitalizationPage() {
           <div style={{padding: '10px 0'}}>
             <DigitalizeBookForm isNew={isNew}></DigitalizeBookForm>
             <div className={styles.newAndEditButtonContainer}>
+              {/* <form action={serverTest}>
+                <input type="file" name="multipartFile " id="" />
+                <button type='submit'>Submit</button>
+              </form> */}
               <div>
                 <button disabled={isNew} onClick={() => setIsNew(true)}>Register new book</button>
                 <button disabled={!isNew} onClick={() => setIsNew(false)}>Edit old book</button>

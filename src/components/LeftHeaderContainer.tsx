@@ -8,9 +8,7 @@ import buttonStyles from '@/components/CSS/buttonsStyle.module.css'
 export default function LeftHeaderContainer() {
     const {data: session} = useSession()
     const login = session?.user
-    // console.log("Current user from header is:", login)
-    console.log("Current session is:", session)
-    // const login = false;
+    // console.log("Current session is:", session)
     if (login) {
         return (
             <div>
@@ -18,10 +16,6 @@ export default function LeftHeaderContainer() {
                 <img src={mock_img.src} alt="avatar" style={avatarStyle}
                 />
             </Link>
-            {/* <button onClick={async () => {
-                // "use server"
-                await signOut({redirectTo: "/"})
-            }} className={buttonStyles.buttonSemiBold} style={authenButton}>Logout</button> */}
             </div>
         );
     }
@@ -30,7 +24,9 @@ export default function LeftHeaderContainer() {
                 <a href="/authentication/signin">
                     <button className={buttonStyles.buttonsWhite} style={authenButton}>Sign in</button>
                 </a>
-                <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
+                <a href="/authentication/signup">
+                    <button className={buttonStyles.buttonSemiBold} style={authenButton}>Sign up</button>
+                </a>
             </div>
         );
 }

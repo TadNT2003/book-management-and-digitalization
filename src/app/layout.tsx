@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { getBookForHome } from "@/server/action";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const books = await getBookForHome()
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

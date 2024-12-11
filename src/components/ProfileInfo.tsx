@@ -27,7 +27,7 @@ export default function ProfileInfo({username}: ProfileInfoInput) {
                  animate={{opacity:1,x:0}}
                  key={i}>
                     <a href={`/book/${book.id}`} style={{textDecoration: 'none'}}>
-                     <BookCard title={book.title} coverImage={book.image} description={book.description}></BookCard>
+                     <BookCard title={book.title} coverImage={book.image} description={book.description} id={String(book.id)}></BookCard>
                     </a>
                  </motion.li>
               )

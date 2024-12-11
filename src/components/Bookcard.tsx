@@ -1,16 +1,25 @@
 import React from 'react'
+import styles from './CSS/bookCard.module.css'
+// import { getBookCover } from '@/server/action'
 
 type BookcardInput = {
     title: string,
     description: string,
     coverImage: string,
+    id: string,
     onClick?: any
 }
 
-export default function Bookcard({title, description, coverImage, onClick}: BookcardInput) {
+export default function Bookcard({title, description, coverImage, id, onClick}: BookcardInput) {
+
   return (
     <div style={cardStyle} onClick={onClick}>
-        <img src={coverImage} alt={title} style={imageStyle}/>
+
+        <img src={`http://localhost:8080/api/books/getBookCover?fileName=${id}.PNG`} className={styles.imageStyle} alt={title} style={imageBGStyle}
+        onError={(e) => {
+            e.currentTarget.src = "/Image-not-found.png"
+        }}/>
+        {/* <div title={title} className={styles.imageStyle} style={imageBGStyle}></div> */}
         <h3 style={titleStyle}>{title}</h3>
         <p style={descriptionStyle}>{description}</p>
     </div>
@@ -29,10 +38,12 @@ const cardStyle = {
     marginRight: '1.6rem',
 }
   
-const imageStyle = {
-    width: '100%',
-    aspectRatio:1,
-    borderRadius: '5px',
+const imageBGStyle = {
+    // backgroundColor: 'black',
+    // width: '100%',
+    // aspectRatio:1,
+    // borderRadius: '5px',
+    // backgroundImage: 'url(D:/MSOB_FE/BE_MSOB/BE_DACN/book/Book_Cover/67551b2dbaae844d52d9eeda.PNG)'
 }
   
 const contentStyle = {
